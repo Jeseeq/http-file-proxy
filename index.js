@@ -35,6 +35,7 @@ function handleRequest(req, res) {
           readStream.on('end', function () {
             fs.writeFile(path, body, function (err) {
               if (err) throw err;
+              res.end();
             });
           });
         });
